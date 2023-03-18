@@ -1,0 +1,35 @@
+File: 0,class: Caminar
+File: 1,class: Otras clases
+File: 10,class: Otras clases
+File: 11,class: Caminar
+File: 12,class: Saltar
+File: 13,class: Caminar
+File: 14,class: Caida lateral
+File: 15,class: Caida hacia delante
+File: 16,class: Otras clases
+File: 17,class: Caminar
+File: 18,class: Correr
+File: 19,class: Otras clases
+File: 2,class: Correr
+File: 20,class: Saltar
+File: 21,class: Caminar
+File: 22,class: Caminar
+File: 23,class: Caida lateral
+File: 24,class: Caida lateral
+File: 25,class: Caida lateral
+File: 26,class: Caminar
+File: 27,class: Caida hacia delante
+File: 28,class: Correr
+File: 29,class: Caminar
+File: 3,class: Otras clases
+File: 30,class: Caida hacia delante
+File: 31,class: Otras clases
+File: 32,class: Saltar
+File: 33,class: Saltar
+File: 34,class: Correr
+File: 4,class: Saltar
+File: 5,class: Bajar escaleras
+File: 6,class: Caida lateral
+File: 7,class: Otras clases
+File: 8,class: Caida lateral
+File: 9,class: Otras clases
