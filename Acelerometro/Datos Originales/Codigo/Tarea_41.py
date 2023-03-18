@@ -41,13 +41,13 @@ list_class = {
 }
 
 
-# In[6]:
+# In[3]:
 
 
 from glob import glob
 
 
-# In[7]:
+# In[4]:
 
 
 #Obteniendo la clase
@@ -62,7 +62,7 @@ def label_class(file):
     return label_1
 
 
-# In[8]:
+# In[5]:
 
 
 #Filtro media movil opcional
@@ -71,7 +71,7 @@ def median_filter(column,n=10):
     return c
 
 
-# In[9]:
+# In[6]:
 
 
 def feature_csv(df,cfg=tsfel.get_features_by_domain(),fs=200,n=None,window=False):
@@ -89,7 +89,7 @@ def feature_csv(df,cfg=tsfel.get_features_by_domain(),fs=200,n=None,window=False
     return f
 
 
-# In[94]:
+# In[7]:
 
 
 def load_data(path,train=True,n=None,window=False,fs=200):
@@ -112,6 +112,7 @@ def load_data(path,train=True,n=None,window=False,fs=200):
         features = np.array(features)
         return features,labels
     else:
+        names =[]
         for file in glob(path):
             file_read = pd.read_csv(file)
             """
@@ -125,10 +126,11 @@ def load_data(path,train=True,n=None,window=False,fs=200):
             _,width = np.shape(feature)
             if feature is not None and width == 1167:
                 features.extend(feature)
-        return np.array(features)
+                names.append(os.path.basename(file).split("_")[-1].split(".")[0])
+        return np.array(features),names
 
 
-# In[11]:
+# In[8]:
 
 
 path_train = "C:/Users/millo/Documents/CICESE/Ciencia de Datos/Ejercicio_4/Train/Original/*/*.csv"
@@ -136,7 +138,7 @@ X,y = load_data(path_train)
 
 # ## F1 SCORE
 
-# In[13]:
+# In[9]:
 
 
 from sklearn.ensemble import RandomForestClassifier
@@ -149,7 +151,7 @@ from sklearn.metrics import plot_confusion_matrix
 
 # ### Random Forest
 
-# In[14]:
+# In[10]:
 
 
 #Señal sin media movil Random Forest
@@ -180,7 +182,7 @@ print(classification_report(y,y_pred1))
 
 # ### Desicion Tree
 
-# In[15]:
+# In[11]:
 
 
 # Desicion Tree con señal original sin media movil
@@ -209,7 +211,7 @@ sorted_tuples = sorted(tuples)
 y_index1,y_pred1 = zip(*sorted_tuples)
 print(classification_report(y,y_pred1))
 
-# In[16]:
+# In[12]:
 
 
 # Obteniendo las clases de los archivos muestras
@@ -218,21 +220,16 @@ path_eval = "C:/Users/millo/Documents/CICESE/Ciencia de Datos/Ejercicio_4/test/*
 Y = load_data(path_eval,train=False)
 
 
-# In[17]:
-
+# In[13]:
 
 YPRED = forest_int_wmean.predict(Y)
-name_forest = "ForestLabels.txt"
+predicted_class_forest = ["File: %s,class: %s"%(n,pred) for n,pred in zip (names,YPRED)]
+print(predicted_class_forest)
+
+# In[14]:
+name_forest = "LabelsForest.txt"
 path_txt = "C:/Users/millo/Documents/CICESE/Ciencia de Datos/Ejercicio_4/"+ name_forest
-np.savetxt(path_txt,YPRED,fmt="%s")
+np.savetxt(path_txt,predicted_class_forest,fmt="%s")
 
-
-# In[18]:
-
-
-YPRED_TREE = tree_int_wmean.predict(Y)
-name_forest = "TreeLabels.txt"
-path_txt = "C:/Users/millo/Documents/CICESE/Ciencia de Datos/Ejercicio_4/"+ name_forest
-np.savetxt(path_txt,YPRED_TREE,fmt="%s")
 
 
