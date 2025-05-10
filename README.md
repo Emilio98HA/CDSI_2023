@@ -1,8 +1,10 @@
 # CDSI_2023
-Este repositorio contendrá todos los códigos de las tareas solicitadas en la asignatrua **Diseño y análisis de experimentos en ciencias de la
-computación**. Estos fueron:
+This repository will contain all the codes of the assignments requested in the subject **Design and analysis of experiments in computer science
+**. These were:
 
-- Detección de emociones a través del procesamiento de señales de audio.
-- Clasificación de letras del lenguaje de señas mexicano, mediante el uso de la librería [Mediapipe](https://chuoling.github.io/mediapipe/), junto con la librerìa [sklearn](https://scikit-learn.org/stable/) para el aprendizaje máquina.
-- Un acelerómetro
-- Detectar si una persona miente o no, mediante el procesamiento de su Electrocardiograma.
+- Emotion detection through audio signal processing.
+- Classification of Mexican Sign Language letters, using the [Mediapipe] library (https://chuoling.github.io/mediapipe/), together with the [sklearn] library (https://scikit-learn.org/stable/) for machine learning.
+- An accelerometer
+- Detect if a person is lying or not, by processing his Electrocardiogram.
+
+Translated with DeepL.com (free version)
