@@ -3,7 +3,7 @@ This repository will contain all the codes of the assignments requested in the s
 **. These were:
 
 - Emotion detection through audio signal processing.
-- Classification of Mexican Sign Language letters, using the [Mediapipe] library (https://chuoling.github.io/mediapipe/), together with the [sklearn] library (https://scikit-learn.org/stable/) for machine learning.
+- Classification of Mexican Sign Language letters, using the library [Mediapipe](https://chuoling.github.io/mediapipe/), together with the library [sklearn](https://scikit-learn.org/stable/) for machine learning.
 - An accelerometer
 - Detect if a person is lying or not, by processing his Electrocardiogram.
 
